@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B30F799527818B2500AD3E58 /* ImportantDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30F799427818B2500AD3E58 /* ImportantDates.swift */; };
+		B31595B72784361400F6A320 /* StructRecruitmentAds.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31595B62784361400F6A320 /* StructRecruitmentAds.swift */; };
 		B33960522782E30700C5963B /* GovJobsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33960512782E30600C5963B /* GovJobsCell.swift */; };
 		B33960542782E80E00C5963B /* GovernmentalJobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33960532782E80E00C5963B /* GovernmentalJobs.swift */; };
 		B33DF9E92781C43200685BDF /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33DF9E82781C43200685BDF /* ForgotPasswordVC.swift */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		B30F799427818B2500AD3E58 /* ImportantDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportantDates.swift; sourceTree = "<group>"; };
+		B31595B62784361400F6A320 /* StructRecruitmentAds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructRecruitmentAds.swift; sourceTree = "<group>"; };
 		B33960512782E30600C5963B /* GovJobsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GovJobsCell.swift; sourceTree = "<group>"; };
 		B33960532782E80E00C5963B /* GovernmentalJobs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GovernmentalJobs.swift; sourceTree = "<group>"; };
 		B33DF9E82781C43200685BDF /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
@@ -115,9 +117,11 @@
 				B3888E6627806D8200009493 /* ViewController.swift */,
 				B3888E962780A72500009493 /* SignUpVC.swift */,
 				B33DF9E82781C43200685BDF /* ForgotPasswordVC.swift */,
+				B31595B62784361400F6A320 /* StructRecruitmentAds.swift */,
 				B33DF9EF2781DBAF00685BDF /* Login.swift */,
 				B375DFA227820A0A0084D555 /* RecruitmentAds.swift */,
 				B375DFA727821C8F0084D555 /* Struct.swift */,
+				B3DB45A3278193A20018055A /* Cells */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -157,7 +161,6 @@
 				B30F799427818B2500AD3E58 /* ImportantDates.swift */,
 				B375DFA5278217200084D555 /* Fonts */,
 				B3888E6827806D8200009493 /* Main.storyboard */,
-				B3DB45A3278193A20018055A /* Cells */,
 				B3888E6B27806D8500009493 /* Assets.xcassets */,
 				B3888E6D27806D8500009493 /* LaunchScreen.storyboard */,
 				B3888E7027806D8500009493 /* Info.plist */,
@@ -327,6 +330,7 @@
 				B3888E6327806D8200009493 /* AppDelegate.swift in Sources */,
 				B30F799527818B2500AD3E58 /* ImportantDates.swift in Sources */,
 				B3DB45A227818DBC0018055A /* ImpDatesCell.swift in Sources */,
+				B31595B72784361400F6A320 /* StructRecruitmentAds.swift in Sources */,
 				B3888E6527806D8200009493 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
