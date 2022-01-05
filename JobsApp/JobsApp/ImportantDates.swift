@@ -44,6 +44,12 @@ class ImportantDates: UIViewController, UITableViewDataSource, UITableViewDelega
            }
        }
     
+
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50.0
+    }
+    
     @IBAction func Signout(_ sender: Any) {
         
         let firebaseAuth = Auth.auth()
