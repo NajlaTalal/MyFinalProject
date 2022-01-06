@@ -19,6 +19,7 @@
 		B33F514A2784CAD20051016D /* NotoNaskhArabic-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B33F51492784CAD20051016D /* NotoNaskhArabic-Medium.ttf */; };
 		B375DFA327820A0A0084D555 /* CreateRecruitmentAds.swift in Sources */ = {isa = PBXBuildFile; fileRef = B375DFA227820A0A0084D555 /* CreateRecruitmentAds.swift */; };
 		B375DFA827821C8F0084D555 /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B375DFA727821C8F0084D555 /* Struct.swift */; };
+		B37A0D7A2785CE2A006A398F /* Dates.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37A0D792785CE2A006A398F /* Dates.swift */; };
 		B3888E6327806D8200009493 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3888E6227806D8200009493 /* AppDelegate.swift */; };
 		B3888E6527806D8200009493 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3888E6427806D8200009493 /* SceneDelegate.swift */; };
 		B3888E6727806D8200009493 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3888E6627806D8200009493 /* ViewController.swift */; };
@@ -63,6 +64,7 @@
 		B33F51492784CAD20051016D /* NotoNaskhArabic-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoNaskhArabic-Medium.ttf"; sourceTree = "<group>"; };
 		B375DFA227820A0A0084D555 /* CreateRecruitmentAds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecruitmentAds.swift; sourceTree = "<group>"; };
 		B375DFA727821C8F0084D555 /* Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
+		B37A0D792785CE2A006A398F /* Dates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dates.swift; sourceTree = "<group>"; };
 		B3888E5F27806D8200009493 /* JobsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3888E6227806D8200009493 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3888E6427806D8200009493 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,7 +112,9 @@
 			isa = PBXGroup;
 			children = (
 				B33960532782E80E00C5963B /* GovernmentalJobs.swift */,
+				B37A0D792785CE2A006A398F /* Dates.swift */,
 				B33DF9ED2781C60200685BDF /* PrivateSectorJobs.swift */,
+				B3DB45A3278193A20018055A /* Cells */,
 				B33DF9EA2781C48400685BDF /* Model */,
 			);
 			path = Controller;
@@ -126,7 +130,7 @@
 				B33DF9EF2781DBAF00685BDF /* Login.swift */,
 				B375DFA227820A0A0084D555 /* CreateRecruitmentAds.swift */,
 				B375DFA727821C8F0084D555 /* Struct.swift */,
-				B3DB45A3278193A20018055A /* Cells */,
+				B30F799427818B2500AD3E58 /* ImportantDates.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -165,7 +169,6 @@
 				B30F79932781884C00AD3E58 /* Controller */,
 				B3888E6227806D8200009493 /* AppDelegate.swift */,
 				B3888E6427806D8200009493 /* SceneDelegate.swift */,
-				B30F799427818B2500AD3E58 /* ImportantDates.swift */,
 				B375DFA5278217200084D555 /* Fonts */,
 				B3888E6827806D8200009493 /* Main.storyboard */,
 				B3888E6B27806D8500009493 /* Assets.xcassets */,
@@ -179,8 +182,8 @@
 		B3DB45A3278193A20018055A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				B3DB45A127818DBC0018055A /* ImpDatesCell.swift */,
 				B33960512782E30600C5963B /* GovJobsCell.swift */,
+				B3DB45A127818DBC0018055A /* ImpDatesCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				B33960542782E80E00C5963B /* GovernmentalJobs.swift in Sources */,
 				B33DF9EE2781C60200685BDF /* PrivateSectorJobs.swift in Sources */,
 				B3888E6327806D8200009493 /* AppDelegate.swift in Sources */,
+				B37A0D7A2785CE2A006A398F /* Dates.swift in Sources */,
 				B30F799527818B2500AD3E58 /* ImportantDates.swift in Sources */,
 				B3DB45A227818DBC0018055A /* ImpDatesCell.swift in Sources */,
 				B31595B72784361400F6A320 /* StructRecruitmentAds.swift in Sources */,

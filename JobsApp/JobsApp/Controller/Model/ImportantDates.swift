@@ -24,7 +24,7 @@ class ImportantDates: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         ImpDateTableView.delegate = self
         ImpDateTableView.dataSource = self
-     
+        
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arr.count
@@ -34,6 +34,7 @@ class ImportantDates: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ImpDatesCell
         cell.textLabel?.text = arr[indexPath.row]
+        
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

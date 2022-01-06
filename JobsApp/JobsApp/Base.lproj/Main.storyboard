@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ydr-d2-Jom">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AEW-CC-fGU">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -125,7 +125,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="hQX-Gz-XkQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1723.1884057971015" y="637.5"/>
+            <point key="canvasLocation" x="-1725" y="638"/>
         </scene>
         <!--Login-->
         <scene sceneID="U9j-Dp-tOi">
@@ -202,7 +202,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F9f-9a-qZF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="sGc-lD-rqb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-900.00000000000011" y="588.61607142857144"/>
+            <point key="canvasLocation" x="-893" y="638"/>
         </scene>
         <!--مواعيد هامة-->
         <scene sceneID="1jM-ny-ckA">
@@ -445,6 +445,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="ابدأ">
+                                    <fontDescription key="titleFontDescription" name="Tajawal-Medium" family="Tajawal" pointSize="15"/>
                                     <color key="baseBackgroundColor" red="0.031113255940000001" green="0.053301994149999997" blue="0.23717645200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -456,6 +457,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="هل تريد إنشاء اعلان وظيفي ؟ اضغط هنا">
+                                    <fontDescription key="titleFontDescription" name="Tajawal-Medium" family="Tajawal" pointSize="15"/>
                                     <color key="baseBackgroundColor" red="0.031113255940000001" green="0.053301994149999997" blue="0.23717645200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -509,7 +511,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="AB4-F8-h6U"/>
+        <segue reference="E1p-qg-NoI"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="list.bullet.rectangle.portrait" catalog="system" width="115" height="128"/>

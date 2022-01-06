@@ -10,7 +10,5 @@ import UIKit
 class ImpDatesCell: UITableViewCell {
     
     @IBOutlet weak var ImpDatesLab: UILabel!
-    
-  
 
 }

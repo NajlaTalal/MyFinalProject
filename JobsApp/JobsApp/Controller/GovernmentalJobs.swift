@@ -7,12 +7,16 @@
 
 import UIKit
 import Firebase
+import SwiftUI
 
 class GovernmentalJobs: UIViewController {
-    
+    let now = Date()
+    let pastDate = Date(timeIntervalSinceNow: -60 * 60 * 24)
+    var dateOfRAds = ""
     let db = Firestore.firestore()
     var hr : [RAds] = []
     let ID = Auth.auth().currentUser?.uid
+   
     weak var collectionView: UICollectionView!
     
     override func loadView() {
@@ -27,6 +31,7 @@ class GovernmentalJobs: UIViewController {
             collectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
         ])
+       
         self.collectionView = collectionView
     }
     
@@ -38,7 +43,12 @@ class GovernmentalJobs: UIViewController {
         self.collectionView.delegate = self
         
         self.collectionView.register(GovJobsCell.self, forCellWithReuseIdentifier: "MyCell")
+                title = "الوظائف الحكومية"
+     
         readdata()
+        pastDate.timeAgoDisplay()
+        dateToSring()
+           
     }
     func readdata() {
         db.collection("RecruitmentAdv")
@@ -49,7 +59,8 @@ class GovernmentalJobs: UIViewController {
                     
                     for document in querySnapshot!.documents {
                         let data = document.data()
-                        self.hr.append(RAds(title: "title", Images: "Images", RecritmentAds: data["RecruitmentAdv"] as? String ?? "" , categories: "categories"))
+                        self.hr.append(RAds(title: data["title"] as! String, Images: "Images", RecritmentAds: data["RecruitmentAdv"] as? String ?? "" ,categories: "categories", dateOfRAds: data["dateOfRAds"] as? String ?? ""))
+                        print(self.hr)
                         self.collectionView.reloadData()
                     }
                     
@@ -57,23 +68,24 @@ class GovernmentalJobs: UIViewController {
             }
     }
     
-    
-    
 }
 
 extension GovernmentalJobs: UICollectionViewDataSource {
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return hr.count
-    }
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return hr.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as! GovJobsCell
-//        cell.textLabel.text = String(indexPath.row + 1)
+        //        cell.textLabel.text = String(indexPath.row + 1)
+        cell.recAdsLabel.text = hr[indexPath.row].RecruitmentAds
+        cell.titleLabel.text = hr[indexPath.row].title
+        let date = stringToDate(Date: hr[indexPath.row].dateOfRAds)
+        cell.dateOfRAdsLabel.text = date
+     
         return cell
     }
 }
@@ -111,3 +123,33 @@ extension GovernmentalJobs: UICollectionViewDelegateFlowLayout {
         return UIEdgeInsets.init(top:150, left: 8, bottom: 8, right: 8)
     }
 }
+
+
+extension Date {
+    func timeAgoDisplay() -> String {
+        let secondsAgo = Int(Date().timeIntervalSince(self))
+        let minute = 60
+        let hour = 60 * minute
+        let day = 24 * hour
+        let week = 7 * day
+        if secondsAgo < minute {
+            return "\(secondsAgo) seconds ago"
+        } else if secondsAgo < hour {
+            return "\(secondsAgo / minute) minutes ago"
+        } else if secondsAgo < day {
+            return "\(secondsAgo / hour) hours ago"
+        } else if secondsAgo < week {
+            return "\(secondsAgo / day) days ago"
+        }
+        return "\(secondsAgo / week) weeks ago"
+        
+        
+    }
+}
+
+
+
+
+
+
+
