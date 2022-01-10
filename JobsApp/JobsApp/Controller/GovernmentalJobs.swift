@@ -17,14 +17,14 @@ class GovernmentalJobs: UIViewController {
     var hr : [RAds] = []
     let ID = Auth.auth().currentUser?.uid
    
-  
-    private let button: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .link
-        button.setTitle("Tap Me", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-       return button
-    }()
+//  
+//    private let button: UIButton = {
+//        let button = UIButton()
+//        button.backgroundColor = .link
+//        button.setTitle("Tap Me", for: .normal)
+//        button.setTitleColor(.white, for: .normal)
+//       return button
+//    }()
 
     weak var collectionView: UICollectionView!
     
@@ -58,10 +58,10 @@ class GovernmentalJobs: UIViewController {
         titlelab.textColor = #colorLiteral(red: 0.0257745944, green: 0.05412763357, blue: 0.2478517592, alpha: 1)
         titlelab.font = .boldSystemFont(ofSize: 20)
         view.addSubview(titlelab)
-        button.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
-        button.center = view.center
-        button.addTarget(self, action: #selector(presentShareSheet(_:)), for: .touchUpInside)
-        view.addSubview(button)
+//        button.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
+//        button.center = view.center
+//        button.addTarget(self, action: #selector(presentShareSheet(_:)), for: .touchUpInside)
+//        view.addSubview(button)
         self.collectionView.backgroundColor = .white
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
@@ -108,12 +108,29 @@ extension GovernmentalJobs: UICollectionViewDataSource {
         cell.titleLabel.text = hr[indexPath.row].title
         let date = stringToDate(Date: hr[indexPath.row].dateOfRAds)
         cell.dateOfRAdsLabel.text = date
+        cell.ShareButton.addTarget(self, action: #selector(presentShareSheet(_:)), for: .touchUpInside)
+        
         
         cell.layer.borderWidth = 1
         cell.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         
         return cell
     }
+    @objc func presentShareSheet(_ sender: UIButton) {
+        guard let image = UIImage(systemName: "bell"),
+              let url = URL(string: "https://www.google.com") else {
+            return
+        }
+//
+        let shareSheetVC = UIActivityViewController(
+            activityItems: [
+                image,
+                url
+            ], applicationActivities: nil)
+
+      present(shareSheetVC , animated: true )
+       
+}
 }
 
 extension ViewController: UICollectionViewDelegate {
@@ -156,28 +173,30 @@ extension GovernmentalJobs: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, titleForHeaderInSection section: Int) -> String? {
         return "Numeros"
     }
-    
-    @objc private func presentShareSheet(_ sender: UIButton) {
-        guard let image = UIImage(systemName: "bell"),
-              let url = URL(string: "https://www.google.com") else {
-            return
-        }
-        
-        let shareSheetVC = UIActivityViewController(
-            activityItems: [
-                image,
-                url
-            ], applicationActivities: nil)
-        
-        
-        // These two lines suport iPad
-        shareSheetVC.popoverPresentationController?.sourceView = sender
-        shareSheetVC.popoverPresentationController?.sourceRect = sender.frame
-        
-        present(shareSheetVC, animated: true)
-    
+ 
+   
 }
-}
+    
+//    @objc private func presentShareSheet(_ sender: UIButton) {
+//        guard let image = UIImage(systemName: "bell"),
+//              let url = URL(string: "https://www.google.com") else {
+//            return
+//        }
+//        
+//        let shareSheetVC = UIActivityViewController(
+//            activityItems: [
+//                image,
+//                url
+//            ], applicationActivities: nil)
+//        
+//        
+//        // These two lines suport iPad
+//        shareSheetVC.popoverPresentationController?.sourceView = sender
+//        shareSheetVC.popoverPresentationController?.sourceRect = sender.frame
+//        
+//        present(shareSheetVC, animated: true)
+//    
+//}
 
 //extension UIView {
 //
