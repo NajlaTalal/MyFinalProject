@@ -18,14 +18,31 @@ class SignUpVC: UIViewController {
     
     @IBOutlet weak var PasswordTF: UITextField!
     
+    let showPasswordButton = UIButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        showPasswordButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+        showPasswordButton.tintColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
+        showPasswordButton.frame = CGRect(x: 315, y: 460, width: 60, height: 60)
+        showPasswordButton.addTarget(self, action: #selector(hidePassword), for: .touchUpInside)
+        view.addSubview(showPasswordButton)
         NameTF.placeholder = "Name"
         IDTF.placeholder = "ID"
         EmailTF.placeholder = "Email"
         PasswordTF.placeholder = "Password"
+        hideKeyboardWhenTappedAround()
         
        }
+    
+    @objc func hidePassword() {
+        PasswordTF.isSecureTextEntry.toggle()
+        if PasswordTF.isSecureTextEntry {
+                   showPasswordButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
+               } else {
+                   showPasswordButton.setImage(UIImage(systemName: "eye"), for: .normal)
+               }
+    }
 
     @IBAction func SignUpBu(_ sender: Any) {
         
@@ -58,8 +75,8 @@ extension AuthErrorCode {
                 return "الايميل مسجل مسبقا"
         case .userDisabled:
                 return "المستخدم غير نشط حاليا"
-        case .operationNotAllowed:
-                return "العملية غير معتمدة"
+//        case .operationNotAllowed:
+//                return "العملية غير معتمدة"
         case .invalidEmail:
                 return "صيغة الايميل غير صحيحه"
         case .wrongPassword:
@@ -76,8 +93,8 @@ extension AuthErrorCode {
                 return "خطأ داخلي يرجى المحاولة مرة أخرى"
         case .invalidCustomToken:
                 return "الرمز غير صالح"
-        case .tooManyRequests:
-                return "لقد أرسلت عددًا كبيرًا جدًا من الطلبات إلى الخادم. أرجو الإنتظار"
+//        case .tooManyRequests:
+//                return "لقد أرسلت عددًا كبيرًا جدًا من الطلبات إلى الخادم. أرجو الإنتظار"
         default:
             return nil
         }
@@ -96,3 +113,17 @@ public extension Error {
         }
         return error.localizedDescription
     } }
+
+extension UIViewController {
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+        
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}

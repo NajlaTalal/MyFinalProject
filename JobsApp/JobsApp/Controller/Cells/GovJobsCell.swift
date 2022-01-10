@@ -12,10 +12,19 @@ import UIKit
 class GovJobsCell: UICollectionViewCell {
     
     
+                                    
     let titleLabel = UILabel(frame: CGRect(x: 100, y: 30,  width: 250 , height: 15 ))
     let recAdsLabel = UILabel(frame: CGRect(x: 100, y: 50,  width: 250 , height: 15 ))
     let dateOfRAdsLabel = UILabel(frame: CGRect(x: 10, y: 5,  width: 120 , height: 30 ))
+    let shareButton = UIButton(frame: CGRect(x: 10, y: 5,  width: 120 , height: 30 ))
     
+      private let button: UIButton = {
+          let button = UIButton()
+          button.backgroundColor = .link
+          button.setTitle("Tap Me", for: .normal)
+          button.setTitleColor(.white, for: .normal)
+         return button
+      }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,16 +40,16 @@ class GovJobsCell: UICollectionViewCell {
             
         ])
         
-        self.contentView.backgroundColor = #colorLiteral(red: 0.1579762697, green: 0.308973968, blue: 0.4092453718, alpha: 1)
-        
+        self.contentView.backgroundColor = #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
+        contentView.addSubview(shareButton)
         contentView.addSubview(titleLabel)
         contentView.addSubview(recAdsLabel)
         contentView.addSubview(dateOfRAdsLabel)
         recAdsLabel.textAlignment = .right
         titleLabel.textAlignment = .right
         dateOfRAdsLabel.textAlignment = .left
-        recAdsLabel.textColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
-        dateOfRAdsLabel.textColor = #colorLiteral(red: 0.6737300158, green: 0.7774943709, blue: 0.8372727036, alpha: 1)
+        recAdsLabel.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        dateOfRAdsLabel.textColor = #colorLiteral(red: 0.8376267552, green: 0.8667850494, blue: 0.8665921092, alpha: 1)
         recAdsLabel.font = UIFont(name: "Tajawal-Medium", size: 18)
         titleLabel.font = UIFont(name: "Tajawal-Medium", size: 15)
         

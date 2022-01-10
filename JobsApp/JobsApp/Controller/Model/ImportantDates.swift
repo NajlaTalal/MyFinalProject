@@ -20,6 +20,8 @@ class ImportantDates: UIViewController, UITableViewDataSource, UITableViewDelega
    
     
     @IBOutlet weak var ImpDateTableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ImpDateTableView.delegate = self
@@ -34,6 +36,9 @@ class ImportantDates: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ImpDatesCell
         cell.textLabel?.text = arr[indexPath.row]
+        cell.layer.borderWidth = 0.5
+        cell.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        cell.layer.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
         
         return cell
     }
@@ -51,14 +56,33 @@ class ImportantDates: UIViewController, UITableViewDataSource, UITableViewDelega
         return 50.0
     }
     
+    
+    //MARK: - SignOutButton
+    
     @IBAction func Signout(_ sender: Any) {
         
-        let firebaseAuth = Auth.auth()
-    do {
-      try firebaseAuth.signOut()
-    } catch let signOutError as NSError {
-      print("Error signing out: %@", signOutError)
-    }
+        
+        let alert = UIAlertController(title: "تنبيه", message: "هل أنت متأكد أنك تريد تسجيل الخروج؟", preferredStyle: .actionSheet)
+              let action = UIAlertAction(title: "تسجيل الخروج", style: .destructive) { action in
+                  
+                  do {
+                      try Auth.auth().signOut()
+                      self.dismiss(animated: true, completion: nil)
+                  } catch {
+                      print(error.localizedDescription)
+                  }
+              }
+              
+              alert.addAction(action)
+              alert.addAction(UIAlertAction(title: "إلغاء", style: .cancel, handler: nil))
+              present(alert, animated: true, completion: nil)
+//
+//        let firebaseAuth = Auth.auth()
+//    do {
+//      try firebaseAuth.signOut()
+//    } catch let signOutError as NSError {
+//      print("Error signing out: %@", signOutError)
+//    }
     }
     
 }

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B30F799527818B2500AD3E58 /* ImportantDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30F799427818B2500AD3E58 /* ImportantDates.swift */; };
+		B311E53027891E17008F8689 /* LunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B311E52F27891E17008F8689 /* LunchScreen.swift */; };
+		B311E53227891ED1008F8689 /* lf20_uqpfhc4y.json in Resources */ = {isa = PBXBuildFile; fileRef = B311E53127891ED1008F8689 /* lf20_uqpfhc4y.json */; };
+		B311E535278920D0008F8689 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = B311E534278920D0008F8689 /* Lottie */; };
 		B31595B72784361400F6A320 /* StructRecruitmentAds.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31595B62784361400F6A320 /* StructRecruitmentAds.swift */; };
 		B33960522782E30700C5963B /* GovJobsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33960512782E30600C5963B /* GovJobsCell.swift */; };
 		B33960542782E80E00C5963B /* GovernmentalJobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33960532782E80E00C5963B /* GovernmentalJobs.swift */; };
@@ -53,6 +56,8 @@
 
 /* Begin PBXFileReference section */
 		B30F799427818B2500AD3E58 /* ImportantDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportantDates.swift; sourceTree = "<group>"; };
+		B311E52F27891E17008F8689 /* LunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchScreen.swift; sourceTree = "<group>"; };
+		B311E53127891ED1008F8689 /* lf20_uqpfhc4y.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf20_uqpfhc4y.json; sourceTree = "<group>"; };
 		B31595B62784361400F6A320 /* StructRecruitmentAds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructRecruitmentAds.swift; sourceTree = "<group>"; };
 		B33960512782E30600C5963B /* GovJobsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GovJobsCell.swift; sourceTree = "<group>"; };
 		B33960532782E80E00C5963B /* GovernmentalJobs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GovernmentalJobs.swift; sourceTree = "<group>"; };
@@ -88,6 +93,7 @@
 				B3888ED82780ABF500009493 /* FirebaseAnalytics in Frameworks */,
 				B3888EDA2780ABF500009493 /* FirebaseAuth in Frameworks */,
 				B3888EDC2780ABF500009493 /* FirebaseFirestore in Frameworks */,
+				B311E535278920D0008F8689 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				B33960532782E80E00C5963B /* GovernmentalJobs.swift */,
+				B311E52F27891E17008F8689 /* LunchScreen.swift */,
 				B37A0D792785CE2A006A398F /* Dates.swift */,
 				B33DF9ED2781C60200685BDF /* PrivateSectorJobs.swift */,
 				B3DB45A3278193A20018055A /* Cells */,
@@ -175,6 +182,7 @@
 				B3888E6D27806D8500009493 /* LaunchScreen.storyboard */,
 				B3888E7027806D8500009493 /* Info.plist */,
 				B3888ED42780AB1000009493 /* GoogleService-Info.plist */,
+				B311E53127891ED1008F8689 /* lf20_uqpfhc4y.json */,
 			);
 			path = JobsApp;
 			sourceTree = "<group>";
@@ -208,6 +216,7 @@
 				B3888ED72780ABF500009493 /* FirebaseAnalytics */,
 				B3888ED92780ABF500009493 /* FirebaseAuth */,
 				B3888EDB2780ABF500009493 /* FirebaseFirestore */,
+				B311E534278920D0008F8689 /* Lottie */,
 			);
 			productName = JobsApp;
 			productReference = B3888E5F27806D8200009493 /* JobsApp.app */;
@@ -283,6 +292,7 @@
 			mainGroup = B3888E5627806D8200009493;
 			packageReferences = (
 				B3888ED62780ABF500009493 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				B311E533278920CF008F8689 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = B3888E6027806D8200009493 /* Products */;
 			projectDirPath = "";
@@ -301,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3888E6F27806D8500009493 /* LaunchScreen.storyboard in Resources */,
+				B311E53227891ED1008F8689 /* lf20_uqpfhc4y.json in Resources */,
 				B3888ED52780AB1000009493 /* GoogleService-Info.plist in Resources */,
 				B3888E6C27806D8500009493 /* Assets.xcassets in Resources */,
 				B33F51462784C6BE0051016D /* Tajawal-ExtraLight.ttf in Resources */,
@@ -337,6 +348,7 @@
 				B375DFA327820A0A0084D555 /* CreateRecruitmentAds.swift in Sources */,
 				B33DF9F02781DBAF00685BDF /* Login.swift in Sources */,
 				B33DF9E92781C43200685BDF /* ForgotPasswordVC.swift in Sources */,
+				B311E53027891E17008F8689 /* LunchScreen.swift in Sources */,
 				B3888E6727806D8200009493 /* ViewController.swift in Sources */,
 				B33960542782E80E00C5963B /* GovernmentalJobs.swift in Sources */,
 				B33DF9EE2781C60200685BDF /* PrivateSectorJobs.swift in Sources */,
@@ -708,6 +720,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B311E533278920CF008F8689 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		B3888ED62780ABF500009493 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -719,6 +739,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B311E534278920D0008F8689 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B311E533278920CF008F8689 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		B3888ED72780ABF500009493 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B3888ED62780ABF500009493 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

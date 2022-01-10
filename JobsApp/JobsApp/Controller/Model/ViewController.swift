@@ -8,13 +8,16 @@
 import UIKit
 import Firebase
 
+
+
 struct CustomData {
     var title: String
 
 }
 
 class ViewController: UIViewController {
-    
+    var timer = Timer()
+    var counter = 0
  let data = [
     CustomData(title: ""),
         CustomData(title: ""),

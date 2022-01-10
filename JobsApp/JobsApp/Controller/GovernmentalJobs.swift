@@ -17,11 +17,23 @@ class GovernmentalJobs: UIViewController {
     var hr : [RAds] = []
     let ID = Auth.auth().currentUser?.uid
    
+  
+    private let button: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .link
+        button.setTitle("Tap Me", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+       return button
+    }()
+
     weak var collectionView: UICollectionView!
     
+    
+   
     override func loadView() {
         super.loadView()
         
+       
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(collectionView)
@@ -31,24 +43,35 @@ class GovernmentalJobs: UIViewController {
             collectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
         ])
-       
+        
         self.collectionView = collectionView
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+  
+        let titlelab = UILabel()
+        titlelab.text = "الوظائف الحكومية"
+        titlelab.frame = CGRect(x: 20, y: 70 , width:350, height: 25)
+        titlelab.textAlignment = .center
+        titlelab.textColor = #colorLiteral(red: 0.0257745944, green: 0.05412763357, blue: 0.2478517592, alpha: 1)
+        titlelab.font = .boldSystemFont(ofSize: 20)
+        view.addSubview(titlelab)
+        button.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
+        button.center = view.center
+        button.addTarget(self, action: #selector(presentShareSheet(_:)), for: .touchUpInside)
+        view.addSubview(button)
         self.collectionView.backgroundColor = .white
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
-        
         self.collectionView.register(GovJobsCell.self, forCellWithReuseIdentifier: "MyCell")
-                title = "الوظائف الحكومية"
-     
+      
+        
         readdata()
         pastDate.timeAgoDisplay()
         dateToSring()
-           
+        
     }
     func readdata() {
         db.collection("RecruitmentAdv")
@@ -80,12 +103,15 @@ extension GovernmentalJobs: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as! GovJobsCell
-        //        cell.textLabel.text = String(indexPath.row + 1)
+        
         cell.recAdsLabel.text = hr[indexPath.row].RecruitmentAds
         cell.titleLabel.text = hr[indexPath.row].title
         let date = stringToDate(Date: hr[indexPath.row].dateOfRAds)
         cell.dateOfRAdsLabel.text = date
-     
+        
+        cell.layer.borderWidth = 1
+        cell.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        
         return cell
     }
 }
@@ -93,22 +119,27 @@ extension GovernmentalJobs: UICollectionViewDataSource {
 extension ViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row + 1)
+//        let select = RAds[indexPath.row]
+//        let  viewCommunities = ViewCommunities()
+//        viewCommunities.arrCommunities = select
+//        present(viewCommunities , animated: true , completion: nil)
+       
     }
 }
+
 
 extension GovernmentalJobs: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        return CGSize(width: collectionView.bounds.size.width - 16, height: 120)
+
+        return CGSize(width: collectionView.bounds.size.width - 16, height: 130)
     }
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 50
+        return 40
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -120,10 +151,45 @@ extension GovernmentalJobs: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets.init(top:150, left: 8, bottom: 8, right: 8)
+        return UIEdgeInsets.init(top:180, left: 8, bottom: 0, right: 8)
     }
+    func collectionView(_ collectionView: UICollectionView, titleForHeaderInSection section: Int) -> String? {
+        return "Numeros"
+    }
+    
+    @objc private func presentShareSheet(_ sender: UIButton) {
+        guard let image = UIImage(systemName: "bell"),
+              let url = URL(string: "https://www.google.com") else {
+            return
+        }
+        
+        let shareSheetVC = UIActivityViewController(
+            activityItems: [
+                image,
+                url
+            ], applicationActivities: nil)
+        
+        
+        // These two lines suport iPad
+        shareSheetVC.popoverPresentationController?.sourceView = sender
+        shareSheetVC.popoverPresentationController?.sourceRect = sender.frame
+        
+        present(shareSheetVC, animated: true)
+    
+}
 }
 
+//extension UIView {
+//
+//    func pin(to superView: UIView){
+//        translatesAutoresizingMaskIntoConstraints                                             = false
+//        topAnchor.constraint(equalTo: superView.topAnchor, constant: 150).isActive            = true
+//        leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: 15).isActive     = true
+//        trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: -15).isActive  = true
+//        bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: -50).isActive      = true
+//    }
+//
+//}
 
 extension Date {
     func timeAgoDisplay() -> String {
