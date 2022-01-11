@@ -8,7 +8,12 @@
 import UIKit
 
 class ImpDatesCell: UITableViewCell {
-    
+    public let visualLayer = CAShapeLayer()
     @IBOutlet weak var ImpDatesLab: UILabel!
 
+
+
+
+  
 }
+

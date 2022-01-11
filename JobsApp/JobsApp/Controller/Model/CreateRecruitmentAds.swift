@@ -7,18 +7,21 @@
 
 import UIKit
 import Firebase
-
+import FirebaseStorage
 class CreateRecruitmentAds: UIViewController {
     
     @IBOutlet weak var titleTF: UITextField!
     
     @IBOutlet weak var adsImage: UIImageView!
     
+    @IBOutlet weak var imagebu: UIButton!
     @IBOutlet weak var categories: UISegmentedControl!
     
     @IBOutlet weak var adsTV: UITextView!
     
     @IBOutlet weak var dateOfRAdsLabel: UILabel!
+    
+    let db = Firestore.firestore()
     let firestoreURL = Firestore.firestore()
     let username = Auth.auth().currentUser?.displayName
     var date = ""
@@ -26,7 +29,6 @@ class CreateRecruitmentAds: UIViewController {
         super.viewDidLoad()
         
         date = dateToSring()
-//        self.hideKeyboardWhenTappedAround() 
     }
     
     @IBAction func addBu(_ sender: Any) {
@@ -35,11 +37,11 @@ class CreateRecruitmentAds: UIViewController {
             .addDocument(data: [
                 "title": titleTF.text! ,
                 "RecruitmentAdv": adsTV.text!,
-                "dateOfRAds": date
+                "dateOfRAds": date,
                 
                 
-                //                 "Images":adsImage.image! ,
-                //                 "categories": categories.se!
+                //                "Images":adsImage.image ,
+                //                "categories": categories!
             ])
         { (error) in
             if let e = error {
@@ -53,16 +55,7 @@ class CreateRecruitmentAds: UIViewController {
         
     }
     
+    @IBAction func getImage(_ sender: Any) {
+       
 }
-
-//extension UIViewController {
-//    func hideKeyboardWhenTappedAround() {
-//        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-//        tap.cancelsTouchesInView = false
-//        view.addGestureRecognizer(tap)
-//    }
-//
-//    @objc func dismissKeyboard() {
-//        view.endEditing(true)
-//    }
-//}
+}

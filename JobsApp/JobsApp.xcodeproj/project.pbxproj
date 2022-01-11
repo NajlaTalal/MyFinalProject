@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B301802A278DD5F800104588 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3018029278DD5F800104588 /* DetailsVC.swift */; };
 		B30F799527818B2500AD3E58 /* ImportantDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30F799427818B2500AD3E58 /* ImportantDates.swift */; };
 		B311E53027891E17008F8689 /* LunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B311E52F27891E17008F8689 /* LunchScreen.swift */; };
 		B311E53227891ED1008F8689 /* lf20_uqpfhc4y.json in Resources */ = {isa = PBXBuildFile; fileRef = B311E53127891ED1008F8689 /* lf20_uqpfhc4y.json */; };
@@ -17,6 +18,7 @@
 		B33DF9E92781C43200685BDF /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33DF9E82781C43200685BDF /* ForgotPasswordVC.swift */; };
 		B33DF9EE2781C60200685BDF /* PrivateSectorJobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33DF9ED2781C60200685BDF /* PrivateSectorJobs.swift */; };
 		B33DF9F02781DBAF00685BDF /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33DF9EF2781DBAF00685BDF /* Login.swift */; };
+		B33E004E278C644600545277 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = B33E004D278C644600545277 /* FirebaseStorage */; };
 		B33F51462784C6BE0051016D /* Tajawal-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B33F51452784C6BE0051016D /* Tajawal-ExtraLight.ttf */; };
 		B33F51482784C7FC0051016D /* Tajawal-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B33F51472784C7FC0051016D /* Tajawal-Medium.ttf */; };
 		B33F514A2784CAD20051016D /* NotoNaskhArabic-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B33F51492784CAD20051016D /* NotoNaskhArabic-Medium.ttf */; };
@@ -55,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B3018029278DD5F800104588 /* DetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
 		B30F799427818B2500AD3E58 /* ImportantDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportantDates.swift; sourceTree = "<group>"; };
 		B311E52F27891E17008F8689 /* LunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunchScreen.swift; sourceTree = "<group>"; };
 		B311E53127891ED1008F8689 /* lf20_uqpfhc4y.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf20_uqpfhc4y.json; sourceTree = "<group>"; };
@@ -93,6 +96,7 @@
 				B3888ED82780ABF500009493 /* FirebaseAnalytics in Frameworks */,
 				B3888EDA2780ABF500009493 /* FirebaseAuth in Frameworks */,
 				B3888EDC2780ABF500009493 /* FirebaseFirestore in Frameworks */,
+				B33E004E278C644600545277 /* FirebaseStorage in Frameworks */,
 				B311E535278920D0008F8689 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				B33960532782E80E00C5963B /* GovernmentalJobs.swift */,
+				B3018029278DD5F800104588 /* DetailsVC.swift */,
 				B311E52F27891E17008F8689 /* LunchScreen.swift */,
 				B37A0D792785CE2A006A398F /* Dates.swift */,
 				B33DF9ED2781C60200685BDF /* PrivateSectorJobs.swift */,
@@ -142,6 +147,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B33E004C278C644600545277 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B375DFA5278217200084D555 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +169,7 @@
 			children = (
 				B3888E6127806D8200009493 /* JobsApp */,
 				B3888E6027806D8200009493 /* Products */,
+				B33E004C278C644600545277 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -217,6 +230,7 @@
 				B3888ED92780ABF500009493 /* FirebaseAuth */,
 				B3888EDB2780ABF500009493 /* FirebaseFirestore */,
 				B311E534278920D0008F8689 /* Lottie */,
+				B33E004D278C644600545277 /* FirebaseStorage */,
 			);
 			productName = JobsApp;
 			productReference = B3888E5F27806D8200009493 /* JobsApp.app */;
@@ -356,6 +370,7 @@
 				B37A0D7A2785CE2A006A398F /* Dates.swift in Sources */,
 				B30F799527818B2500AD3E58 /* ImportantDates.swift in Sources */,
 				B3DB45A227818DBC0018055A /* ImpDatesCell.swift in Sources */,
+				B301802A278DD5F800104588 /* DetailsVC.swift in Sources */,
 				B31595B72784361400F6A320 /* StructRecruitmentAds.swift in Sources */,
 				B3888E6527806D8200009493 /* SceneDelegate.swift in Sources */,
 			);
@@ -743,6 +758,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B311E533278920CF008F8689 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		B33E004D278C644600545277 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B3888ED62780ABF500009493 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 		B3888ED72780ABF500009493 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;

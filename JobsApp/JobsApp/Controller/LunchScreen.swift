@@ -16,7 +16,8 @@ class LunchScreen: UIViewController {
         configureAnimation()
     }
     
-
+//MARK:- Anamation
+    
     func configureAnimation() {
         let animation = Animation.named("lf20_uqpfhc4y")
         let animationView = AnimationView(animation:animation)

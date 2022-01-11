@@ -39,7 +39,7 @@ class ImportantDates: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.layer.borderWidth = 0.5
         cell.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         cell.layer.backgroundColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
-        
+     
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
