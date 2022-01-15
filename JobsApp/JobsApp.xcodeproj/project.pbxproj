@@ -37,6 +37,7 @@
 		B3888EDA2780ABF500009493 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = B3888ED92780ABF500009493 /* FirebaseAuth */; };
 		B3888EDC2780ABF500009493 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = B3888EDB2780ABF500009493 /* FirebaseFirestore */; };
 		B3DB45A227818DBC0018055A /* ImpDatesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DB45A127818DBC0018055A /* ImpDatesCell.swift */; };
+		B3FDBB67279040AA009841FC /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3FDBB65279040AA009841FC /* CoreData.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		B3888E962780A72500009493 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		B3888ED42780AB1000009493 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B3DB45A127818DBC0018055A /* ImpDatesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImpDatesCell.swift; sourceTree = "<group>"; };
+		B3FDBB66279040AA009841FC /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 				B3888E7027806D8500009493 /* Info.plist */,
 				B3888ED42780AB1000009493 /* GoogleService-Info.plist */,
 				B311E53127891ED1008F8689 /* lf20_uqpfhc4y.json */,
+				B3FDBB65279040AA009841FC /* CoreData.xcdatamodeld */,
 			);
 			path = JobsApp;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 			files = (
 				B375DFA827821C8F0084D555 /* Struct.swift in Sources */,
 				B3888E972780A72500009493 /* SignUpVC.swift in Sources */,
+				B3FDBB67279040AA009841FC /* CoreData.xcdatamodeld in Sources */,
 				B33960522782E30700C5963B /* GovJobsCell.swift in Sources */,
 				B375DFA327820A0A0084D555 /* CreateRecruitmentAds.swift in Sources */,
 				B33DF9F02781DBAF00685BDF /* Login.swift in Sources */,
@@ -780,6 +784,20 @@
 			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		B3FDBB65279040AA009841FC /* CoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B3FDBB66279040AA009841FC /* CoreData.xcdatamodel */,
+			);
+			currentVersion = B3FDBB66279040AA009841FC /* CoreData.xcdatamodel */;
+			name = CoreData.xcdatamodeld;
+			path = Controller/CoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B3888E5727806D8200009493 /* Project object */;
 }

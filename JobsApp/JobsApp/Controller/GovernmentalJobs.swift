@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 import SwiftUI
-
+import FirebaseStorage
 class GovernmentalJobs: UIViewController {
     let now = Date()
     let pastDate = Date(timeIntervalSinceNow: -60 * 60 * 24)
@@ -44,13 +44,7 @@ class GovernmentalJobs: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let titlelab = UILabel()
-        titlelab.text = "الوظائف الحكومية"
-        titlelab.frame = CGRect(x: 20, y: 70 , width:350, height: 25)
-        titlelab.textAlignment = .center
-        titlelab.textColor = #colorLiteral(red: 0.0257745944, green: 0.05412763357, blue: 0.2478517592, alpha: 1)
-        titlelab.font = .boldSystemFont(ofSize: 20)
-        view.addSubview(titlelab)
+
         self.collectionView.backgroundColor = .white
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
@@ -105,9 +99,11 @@ extension GovernmentalJobs: UICollectionViewDataSource {
         let date = stringToDate(Date: hr[indexPath.row].dateOfRAds)
         cell.dateOfRAdsLabel.text = date
         cell.ShareButton.addTarget(self, action: #selector(presentShareSheet(_:)), for: .touchUpInside)
+        cell.ShareButton.tintColor = .gray
         cell.layer.borderWidth = 1
-        cell.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        cell.layer.borderColor = #colorLiteral(red: 0.09203992039, green: 0.5343717337, blue: 0.6424081922, alpha: 1)
         cell.layer.cornerRadius = 10
+        cell.backgroundColor = #colorLiteral(red: 0.0257745944, green: 0.05412763357, blue: 0.2478517592, alpha: 1)
         return cell
     }
     
@@ -129,17 +125,36 @@ extension GovernmentalJobs: UICollectionViewDataSource {
         present(shareSheetVC , animated: true )
         
     }
+//    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let userPickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {return}
+        guard let d: Data = userPickedImage.jpegData(compressionQuality: 0.5) else { return }
+        guard let currentUser = Auth.auth().currentUser else {return}
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/png"
+        let ref = storage.reference().child("UserImages/\(currentUser.email!)/\(currentUser.uid)/\(UUID()).jpg")
+        ref.putData(d, metadata: metadata) { (metadata, error) in
+          if error == nil {
+            ref.downloadURL(completion: { (url, error) in
+              self.imageURL = "\(url!)"
+            })
+          }else{
+            print("error \(String(describing: error))")
+          }
+        }
+        picker.dismiss(animated: true, completion: nil)
+      }
 }
-
-extension ViewController: UICollectionViewDelegate {
-    
-    //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    //                let select = hr[indexPath.row]
-    //                let details = DetailsVC()
-    //        details.hr = select
-    //
-    //    }
-}
+//
+//extension ViewController: UICollectionViewDelegate {
+//
+//    //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//    //                let select = hr[indexPath.row]
+//    //                let details = DetailsVC()
+//    //        details.hr = select
+//    //
+//    //    }
+//}
 
 
 extension GovernmentalJobs: UICollectionViewDelegateFlowLayout {
@@ -167,9 +182,7 @@ extension GovernmentalJobs: UICollectionViewDelegateFlowLayout {
                         insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets.init(top:180, left: 8, bottom: 0, right: 8)
     }
-    func collectionView(_ collectionView: UICollectionView, titleForHeaderInSection section: Int) -> String? {
-        return "Numeros"
-    }
+  
     
     
 }

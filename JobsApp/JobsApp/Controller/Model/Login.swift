@@ -14,8 +14,11 @@ class Login: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-      
+        emailTF.setLeftImage(imageName: "envelope")
+        emailTF.setUnderLine()
+        passwordTF.setLeftImage(imageName: "lock")
+        passwordTF.setUnderLine()
+        
     }
     
 
@@ -32,4 +35,15 @@ class Login: UIViewController {
         
     }
     
+}
+
+extension UITextField{
+
+    func setLeftImage(imageName:String) {
+
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        imageView.image = UIImage(named: imageName)
+        self.leftView = imageView;
+        self.leftViewMode = .always
+    }
 }

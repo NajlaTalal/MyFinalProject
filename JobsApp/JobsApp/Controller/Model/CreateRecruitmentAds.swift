@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseStorage
+import CoreData
 class CreateRecruitmentAds: UIViewController {
     
     @IBOutlet weak var titleTF: UITextField!
@@ -25,6 +26,7 @@ class CreateRecruitmentAds: UIViewController {
     let firestoreURL = Firestore.firestore()
     let username = Auth.auth().currentUser?.displayName
     var date = ""
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,7 +34,7 @@ class CreateRecruitmentAds: UIViewController {
     }
     
     @IBAction func addBu(_ sender: Any) {
-        
+        let test = CatgSet(value: categories.selectedSegmentIndex)
         firestoreURL.collection("RecruitmentAdv")
             .addDocument(data: [
                 "title": titleTF.text! ,
@@ -58,4 +60,22 @@ class CreateRecruitmentAds: UIViewController {
     @IBAction func getImage(_ sender: Any) {
        
 }
+    
+    
+    func CatgSet (value:Int) -> String{
+        
+        switch value{
+        case 0:
+            return "All"
+        case 1:
+            return "Health"
+        case 2:
+            return "Social"
+        case 3:
+            return "Technical"
+        default:
+            return "All"
+        }
+        
+    }
 }

@@ -8,12 +8,12 @@
 import UIKit
 
 class DetailsVC: UIViewController {
-
+    
     @IBOutlet weak var titlelabel: UILabel!
     
     @IBOutlet weak var detailslabel: UILabel!
     var titleAd = ""
-          var details = ""
+    var details = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         titlelabel.text = titleAd
@@ -28,7 +28,9 @@ class DetailsVC: UIViewController {
         
     }
     
-
-
-
+    
+    
+    
+    
 }
+

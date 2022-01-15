@@ -20,18 +20,24 @@ class SignUpVC: UIViewController {
     
     let showPasswordButton = UIButton()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        NameTF.setUnderLine()
+        IDTF.setUnderLine()
+        EmailTF.setUnderLine()
+        PasswordTF.setUnderLine()
         showPasswordButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
         showPasswordButton.tintColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
-        showPasswordButton.frame = CGRect(x: 315, y: 460, width: 60, height: 60)
+        showPasswordButton.frame = CGRect(x: 25, y: 460, width: 60, height: 60)
         showPasswordButton.addTarget(self, action: #selector(hidePassword), for: .touchUpInside)
         view.addSubview(showPasswordButton)
-        NameTF.placeholder = "Name"
-        IDTF.placeholder = "ID"
-        EmailTF.placeholder = "Email"
-        PasswordTF.placeholder = "Password"
+        NameTF.placeholder = "الاسم"
+        IDTF.placeholder = "الهوية الوطنية"
+        EmailTF.placeholder = "البريد الإلكتروني"
+        PasswordTF.placeholder = "كلمة المرور"
         hideKeyboardWhenTappedAround()
+//        self.view.addBackground()
         
        }
     
@@ -128,4 +134,33 @@ extension UIViewController {
     }
 }
 
+//
+//extension UIView {
+//func addBackground() {
+//    // screen width and height:
+//    let width = UIScreen.main.bounds.size.width
+//    let height = UIScreen.main.bounds.size.height
+//
+//    let imageViewBackground = UIImageView(frame: CGRect(x: 0, y: 0, width: width, height: height))
+//    imageViewBackground.image = UIImage(named: "background.jpg")
+//
+//    // you can change the content mode:
+//    imageViewBackground.contentMode = UIView.ContentMode.scaleAspectFill
+//
+//    self.addSubview(imageViewBackground)
+//    self.sendSubviewToBack(imageViewBackground)
+//}}
 
+extension UITextField {
+
+    func setUnderLine() {
+        let border = CALayer()
+        let width = CGFloat(0.5)
+        border.borderColor = UIColor.darkGray.cgColor
+        border.frame = CGRect(x: 0, y: self.frame.size.height - width, width:  self.frame.size.width - 10, height: self.frame.size.height)
+        border.borderWidth = width
+        self.layer.addSublayer(border)
+        self.layer.masksToBounds = true
+    }
+
+}
